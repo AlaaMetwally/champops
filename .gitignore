@@ -1,0 +1,41 @@
+# OS
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# IDE
+.idea/
+*.iml
+.vscode/
+*.swp
+
+# Java / Maven
+target/
+*.class
+*.jar
+*.war
+*.log
+
+# Node / Angular
+node_modules/
+dist/
+.angular/
+npm-debug.log*
+yarn-error.log*
+
+# Env / secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Docker / local data
+*.sql.bak
+postgres-data/
+redis-data/
+
+# Misc
+coverage/
+tmp/
+temp/
