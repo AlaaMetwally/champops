@@ -36,7 +36,7 @@ This is a practical approach used in real-world systems.
 
 ## Current milestone
 
-Milestone 1: Spring Boot backend skeleton is running with /api/health.
+Milestone 1: Spring Boot backend and Angular frontend skeletons are running.
 
 ## Author
 
