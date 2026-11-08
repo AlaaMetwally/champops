@@ -36,7 +36,7 @@ This is a practical approach used in real-world systems.
 
 ## Current milestone
 
-Milestone 0: repository setup, documentation, and project foundation.
+Milestone 1: Spring Boot backend skeleton is running with /api/health.
 
 ## Author
 
