@@ -1,12 +1,29 @@
 import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
-  imports: [RouterOutlet],
   selector: 'app-root',
-  styleUrl: './app.scss',
+  imports: [],
   templateUrl: './app.html',
+  styleUrl: './app.scss',
 })
 export class App {
-  protected readonly title = signal('frontend');
+  protected readonly title = signal('ChampOps');
+  protected readonly healthStatus = signal('Not checked yet');
+
+  constructor(private readonly http: HttpClient) {}
+
+  checkBackendHealth(): void {
+    this.healthStatus.set('Checking...');
+
+    this.http.get<{ status: string; service: string }>('http://localhost:8080/api/health')
+      .subscribe({
+        next: (response) => {
+          this.healthStatus.set(`${response.status} (${response.service})`);
+        },
+        error: () => {
+          this.healthStatus.set('DOWN - start backend on port 8080');
+        },
+      });
+  }
 }
